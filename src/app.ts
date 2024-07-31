@@ -7,8 +7,6 @@ import { Server } from "./presentation/server";
 })();
 
 async function main() {
-  console.log("Hello world");
-
   // todo: await for database
 
   // todo: await for server
