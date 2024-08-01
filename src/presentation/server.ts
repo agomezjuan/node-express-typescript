@@ -1,4 +1,5 @@
 import express, { Router } from "express";
+import { MorganAdapter, WinstonAdapter } from "../config";
 
 interface Options {
   port?: number;
@@ -19,6 +20,11 @@ export class Server {
 
   public start(): void {
     // Middlewares
+    this.app.use(MorganAdapter.create());
+
+    // Configurar Winston
+    const logger = WinstonAdapter.createLogger();
+
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
 
