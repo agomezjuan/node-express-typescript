@@ -21,7 +21,7 @@ export class AuthController {
         res.json(user);
       })
       .catch((error) => {
-        res.status(error.status).json({ error: error.message });
+        res.status(error.statusCode).json({ error: error.message });
       });
   };
 }
